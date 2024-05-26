@@ -18,6 +18,8 @@
 		8166CD472C02A36A00F7C626 /* MagazineInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8166CD462C02A36A00F7C626 /* MagazineInfo.swift */; };
 		8166CD4A2C02A92600F7C626 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8166CD492C02A92600F7C626 /* HomeTableViewController.swift */; };
 		8166CD4C2C02AC3200F7C626 /* CustomTravelTableItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8166CD4B2C02AC3200F7C626 /* CustomTravelTableItemViewCell.swift */; };
+		81ECCF002C02F3EC00F80D41 /* CustomRestaurantItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ECCEFF2C02F3EC00F80D41 /* CustomRestaurantItemViewCell.swift */; };
+		81ECCF022C02F43700F80D41 /* RestaurantSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ECCF012C02F43700F80D41 /* RestaurantSearchTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		8166CD462C02A36A00F7C626 /* MagazineInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineInfo.swift; sourceTree = "<group>"; };
 		8166CD492C02A92600F7C626 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		8166CD4B2C02AC3200F7C626 /* CustomTravelTableItemViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTravelTableItemViewCell.swift; sourceTree = "<group>"; };
+		81ECCEFF2C02F3EC00F80D41 /* CustomRestaurantItemViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRestaurantItemViewCell.swift; sourceTree = "<group>"; };
+		81ECCF012C02F43700F80D41 /* RestaurantSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantSearchTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,8 @@
 			children = (
 				8166CD492C02A92600F7C626 /* HomeTableViewController.swift */,
 				8166CD4B2C02AC3200F7C626 /* CustomTravelTableItemViewCell.swift */,
+				81ECCEFF2C02F3EC00F80D41 /* CustomRestaurantItemViewCell.swift */,
+				81ECCF012C02F43700F80D41 /* RestaurantSearchTableViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -181,6 +187,8 @@
 				8166CD4C2C02AC3200F7C626 /* CustomTravelTableItemViewCell.swift in Sources */,
 				5921E84A2C016C5E005AA164 /* SceneDelegate.swift in Sources */,
 				8166CD472C02A36A00F7C626 /* MagazineInfo.swift in Sources */,
+				81ECCF022C02F43700F80D41 /* RestaurantSearchTableViewController.swift in Sources */,
+				81ECCF002C02F3EC00F80D41 /* CustomRestaurantItemViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
