@@ -11,10 +11,13 @@ import Kingfisher
 class RestaurantSearchTableViewController: UITableViewController {
     
     @IBOutlet var headerItem: UIView!
+    @IBOutlet var searchTextField: UITextField!
+    @IBOutlet var searchButton: UIButton!
     
     let datas = RestaurantList().restaurantArray
+    var filteredDatas = RestaurantList().restaurantArray
     var likeArray: [Int] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.rowHeight =  185
@@ -29,9 +32,9 @@ class RestaurantSearchTableViewController: UITableViewController {
             return 0
         }
         
-        print(likeArray)
+        self.searchButton.addTarget(self, action: #selector(searchRestaurant), for: .touchUpInside)
+        
     }
-    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return datas.count
@@ -44,7 +47,10 @@ class RestaurantSearchTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "RestaurantCell", for: indexPath) as! CustomRestaurantItemViewCell
         
-        let data = datas[indexPath.row]
+        print(indexPath.row)
+        print("2", filteredDatas)
+        
+        let data = filteredDatas[indexPath.row]
         
         cell.restaurantImage.kf.setImage(with: URL(string: data.image))
         cell.selectionStyle = .none
@@ -66,8 +72,22 @@ class RestaurantSearchTableViewController: UITableViewController {
             likeArray[target.tag] = 0
         }
         
-        print(likeArray)
         self.tableView.reloadSections(IndexSet(integer: 0), with: .none)
     }
-
+    
+    @objc func searchRestaurant() {
+        guard let search = self.searchTextField.text else {
+            return;
+        }
+        
+        if !search.isEmpty {
+            filteredDatas = filteredDatas.filter { restaurant -> Bool in
+                return (restaurant.name.contains(search) || restaurant.category.contains(search)) ? true : false
+                
+            }
+        }
+                
+        self.tableView.reloadData()
+    }
+    
 }
