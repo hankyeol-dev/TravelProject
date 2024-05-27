@@ -21,6 +21,7 @@
                     <connections>
                         <segue destination="KNq-lB-XIY" kind="relationship" relationship="viewControllers" id="EdZ-hn-mNn"/>
                         <segue destination="K5o-I0-854" kind="relationship" relationship="viewControllers" id="tQr-of-jIK"/>
+                        <segue destination="yn0-QF-ilh" kind="relationship" relationship="viewControllers" id="ffr-4i-s3W"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vD1-Vx-3bx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -129,7 +130,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fWz-xE-kyT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1770.4000000000001" y="-250.49261083743843"/>
+            <point key="canvasLocation" x="-1396" y="-604"/>
         </scene>
         <!--Restaurant Search-->
         <scene sceneID="has-Tf-eA8">
@@ -277,18 +278,48 @@
                 </imageView>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhr-o1-rj7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1770.4000000000001" y="465.51724137931035"/>
+            <point key="canvasLocation" x="-1396" y="112"/>
+        </scene>
+        <!--PopularityCities-->
+        <scene sceneID="Dvg-UP-aXm">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PopularityCities" id="fdg-BF-VgC" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="SfO-1I-CyD"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NZ1-Q7-brj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-606" y="892"/>
+        </scene>
+        <!--인기 도시-->
+        <scene sceneID="Z10-08-hVR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yn0-QF-ilh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="인기 도시" image="star.fill" catalog="system" id="WZN-Cl-Rqo"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zTI-LB-dWx">
+                        <rect key="frame" x="0.0" y="50" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fdg-BF-VgC" kind="relationship" relationship="rootViewController" id="11z-w3-sj4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x3I-2H-Sv7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1396" y="892"/>
         </scene>
     </scenes>
     <resources>
         <image name="cup.and.saucer" catalog="system" width="128" height="91"/>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="house" catalog="system" width="128" height="104"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
