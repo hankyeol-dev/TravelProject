@@ -33,7 +33,7 @@ class PopularityCityViewController: UIViewController, UITableViewDelegate, UITab
         return datas.count
     }
     
-//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        return datas[indexPath.row].ad ? 100 : 140
 //    }
     
@@ -54,7 +54,7 @@ class PopularityCityViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     @objc func onTouchLikeButton(_ sender: UIButton) {
-        if var isLiked = datas[sender.tag].like {
+        if let isLiked = datas[sender.tag].like {
             if isLiked {
                 datas[sender.tag].like = false
                 sender.buttonOnTouch(tintColor: .lightGray)

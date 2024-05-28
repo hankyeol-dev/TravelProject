@@ -47,8 +47,6 @@ class RestaurantSearchTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "RestaurantCell", for: indexPath) as! CustomRestaurantItemViewCell
         
-        print(indexPath.row)
-        print("2", filteredDatas)
         
         let data = filteredDatas[indexPath.row]
         
