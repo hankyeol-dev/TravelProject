@@ -36,38 +36,24 @@ class PopularityCityViewCell: UITableViewCell {
         
         self.title.text = data.title
         self.descript.text = description
-        self.commonInfo.text = self.returnStarRating(grade) + " | " + "저장: \(save.formatted())"
+        self.commonInfo.attributedText = self.convertGradeIntoStarRating(grade, save)
         self.cityImage.kf.setImage(with: URL(string: image))
         self.likeButton.tintColor = like ? .lightGray : .systemPink
         
     }
     
-//    func convertGradeIntoStarRating() {
-//        let testString = NSMutableAttributedString(string: " ")
-//        let testAttached = NSTextAttachment()
-//        
-////        testAttached.image =
-////        testAttached.image!.withTintColor(.red)s★★
-//        testAttached.bounds = CGRect(x: 0, y: 0, width: 12, height: 12)
-//        testString.append(NSAttributedString(attachment: testAttached))
-//        
-//        self.commonInfo.attributedText = testString
-//    }
-    
-    func returnStarRating(_ grade: Double) -> String {
+    func convertGradeIntoStarRating(_ grade: Double, _ save: Double) -> NSAttributedString {
+        let base = NSMutableAttributedString(string: "")
+        let attached = NSTextAttachment()
+        let attachedImage = UIImage(systemName: "star.fill")?.withTintColor(.orange)
         
-        if grade > 4.5 {
-            return "★★★★★"
-        } else if grade > 3.5 {
-            return "★★★★"
-        } else if grade > 2.5 {
-            return "★★★"
-        } else if grade > 1.5 {
-            return "**"
-        } else if grade > 0.5 {
-            return "★"
-        } else {
-            return ""
-        }
+        attached.image = attachedImage
+        attached.bounds = CGRect(x: 0, y: 0, width: 12, height: 12)
+        
+        base.append(NSAttributedString(attachment: attached))
+        base.append(NSAttributedString(string: " \(grade) ⋅ \(save.formatted())"))
+        
+        return base
     }
+    
 }
