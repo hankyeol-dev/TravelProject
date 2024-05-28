@@ -25,7 +25,7 @@ class PopularityCityViewController: UIViewController, UITableViewDelegate, UITab
         cityTableSection.register(UINib(nibName: "PopularityCityViewCell", bundle: nil), forCellReuseIdentifier: "PopularityCityCell")
         cityTableSection.register(UINib(nibName: "AdvertisementViewCell", bundle: nil), forCellReuseIdentifier: "advertisementCell")
         
-        cityTableSection.rowHeight = 140
+        //        cityTableSection.rowHeight = 140
     }
     
     // configure table
@@ -33,24 +33,28 @@ class PopularityCityViewController: UIViewController, UITableViewDelegate, UITab
         return datas.count
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return datas[indexPath.row].ad ? 100 : 140
-//    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return datas[indexPath.row].ad ? 100 : 140
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let data = datas[indexPath.row]
         
-        let cityCell = cityTableSection.dequeueReusableCell(withIdentifier: "PopularityCityCell", for: indexPath) as! PopularityCityViewCell
-        let adCell = cityTableSection.dequeueReusableCell(withIdentifier: "advertisementCell", for: indexPath) as! AdvertisementViewCell
+        if data.ad {
+            let adCell = cityTableSection.dequeueReusableCell(withIdentifier: "advertisementCell", for: indexPath) as! AdvertisementViewCell
+            adCell.configureCell(data)
+            return adCell
+        } else {
+            
+            let cityCell = cityTableSection.dequeueReusableCell(withIdentifier: "PopularityCityCell", for: indexPath) as! PopularityCityViewCell
+            
+            cityCell.likeButton.tag = indexPath.row
+            cityCell.likeButton.addTarget(self, action: #selector(onTouchLikeButton), for: .touchUpInside)
+            
+            cityCell.configureCell(data)
+            return cityCell
+        }
         
-        cityCell.likeButton.tag = indexPath.row
-        cityCell.likeButton.addTarget(self, action: #selector(onTouchLikeButton), for: .touchUpInside)
-        
-        cityCell.configureCell(data)
-        adCell.configureCell(data)
-        
-        
-        return data.ad ? adCell : cityCell
     }
     
     @objc func onTouchLikeButton(_ sender: UIButton) {
@@ -67,5 +71,5 @@ class PopularityCityViewController: UIViewController, UITableViewDelegate, UITab
         }
         
     }
-
+    
 }
