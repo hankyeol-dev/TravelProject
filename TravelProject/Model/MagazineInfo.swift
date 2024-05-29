@@ -12,6 +12,15 @@ struct Magazine {
     let photo_image: String
     let date: String
     let link: String
+    
+    var formattedDate: String {
+        var dateArray = Array(date)
+        dateArray.insert(contentsOf: "년 ", at: 2)
+        dateArray.insert(contentsOf: "월 ", at: 6)
+        dateArray.insert(contentsOf: "일", at: dateArray.count)
+        
+        return String(dateArray)
+    }
 }
 
 struct MagazineInfo {

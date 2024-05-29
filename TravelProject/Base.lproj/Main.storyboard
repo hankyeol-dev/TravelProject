@@ -35,7 +35,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9np-eK-XCz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-829" y="-557"/>
+            <point key="canvasLocation" x="88" y="-557"/>
         </scene>
         <!--SearchRestaurant-->
         <scene sceneID="VuQ-DK-hgk">
@@ -45,7 +45,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uxq-Mb-rZk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="103.2" y="123.39901477832512"/>
+            <point key="canvasLocation" x="73" y="153"/>
         </scene>
         <!--PopularityCities-->
         <scene sceneID="Dvg-UP-aXm">

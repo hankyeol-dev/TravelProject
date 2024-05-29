@@ -35,6 +35,8 @@
 		817BF05B2C04632F004F096E /* CommonImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817BF05A2C04632F004F096E /* CommonImageView.swift */; };
 		817BF05D2C0463E8004F096E /* CommonLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817BF05C2C0463E8004F096E /* CommonLabelView.swift */; };
 		817BF05F2C0464B0004F096E /* CommonIconedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817BF05E2C0464B0004F096E /* CommonIconedButton.swift */; };
+		81F640A72C07080300C9DEA3 /* PopularityCityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F640A62C07080300C9DEA3 /* PopularityCityDetailViewController.swift */; };
+		81FA1E712C06F3CD00A84794 /* MagazineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FA1E702C06F3CD00A84794 /* MagazineDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +69,8 @@
 		817BF05A2C04632F004F096E /* CommonImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonImageView.swift; sourceTree = "<group>"; };
 		817BF05C2C0463E8004F096E /* CommonLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonLabelView.swift; sourceTree = "<group>"; };
 		817BF05E2C0464B0004F096E /* CommonIconedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommonIconedButton.swift; path = TravelProject/Extensions/CommonIconedButton.swift; sourceTree = SOURCE_ROOT; };
+		81F640A62C07080300C9DEA3 /* PopularityCityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularityCityDetailViewController.swift; sourceTree = "<group>"; };
+		81FA1E702C06F3CD00A84794 /* MagazineDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,9 +106,9 @@
 			children = (
 				8166723C2C05CC12002D1FDC /* SearchRestaurant */,
 				8166722D2C05BBB8002D1FDC /* TravelAppMain */,
+				8166CD482C02A8F800F7C626 /* PopularityCity */,
 				817BF0592C045FD4004F096E /* Extensions */,
 				817BF0502C045E8B004F096E /* XIB */,
-				8166CD482C02A8F800F7C626 /* View */,
 				5921E85B2C016DE0005AA164 /* Model */,
 				5921E8472C016C5E005AA164 /* AppDelegate.swift */,
 				5921E8492C016C5E005AA164 /* SceneDelegate.swift */,
@@ -135,6 +139,7 @@
 				816672342C05BF1E002D1FDC /* TavelAppMainViewController.swift */,
 				816672382C05C201002D1FDC /* MagazineTableViewCell.swift */,
 				816672392C05C201002D1FDC /* MagazineTableViewCell.xib */,
+				81FA1E702C06F3CD00A84794 /* MagazineDetailViewController.swift */,
 			);
 			path = TravelAppMain;
 			sourceTree = "<group>";
@@ -150,14 +155,15 @@
 			path = SearchRestaurant;
 			sourceTree = "<group>";
 		};
-		8166CD482C02A8F800F7C626 /* View */ = {
+		8166CD482C02A8F800F7C626 /* PopularityCity */ = {
 			isa = PBXGroup;
 			children = (
 				817BF0512C045EA3004F096E /* PopularityCityViewCell.swift */,
 				817BF04C2C045BF1004F096E /* PopularityCityViewController.swift */,
 				817BF0552C045EDC004F096E /* AdvertisementViewCell.swift */,
+				81F640A62C07080300C9DEA3 /* PopularityCityDetailViewController.swift */,
 			);
-			path = View;
+			path = PopularityCity;
 			sourceTree = "<group>";
 		};
 		817BF0502C045E8B004F096E /* XIB */ = {
@@ -271,6 +277,7 @@
 				5921E84C2C016C5E005AA164 /* ViewController.swift in Sources */,
 				817BF05B2C04632F004F096E /* CommonImageView.swift in Sources */,
 				5921E8482C016C5E005AA164 /* AppDelegate.swift in Sources */,
+				81FA1E712C06F3CD00A84794 /* MagazineDetailViewController.swift in Sources */,
 				816672402C05CC8F002D1FDC /* SearchRestaurantViewController.swift in Sources */,
 				817BF0582C045EDC004F096E /* AdvertisementViewCell.swift in Sources */,
 				5921E84A2C016C5E005AA164 /* SceneDelegate.swift in Sources */,
@@ -279,6 +286,7 @@
 				817BF05D2C0463E8004F096E /* CommonLabelView.swift in Sources */,
 				816672352C05BF1E002D1FDC /* TavelAppMainViewController.swift in Sources */,
 				817BF0542C045EA3004F096E /* PopularityCityViewCell.swift in Sources */,
+				81F640A72C07080300C9DEA3 /* PopularityCityDetailViewController.swift in Sources */,
 				8166CD472C02A36A00F7C626 /* MagazineInfo.swift in Sources */,
 				8166723B2C05C201002D1FDC /* MagazineTableViewCell.swift in Sources */,
 			);

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TravelAppMainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TravelAppMainViewController: UIViewController {
     
     let datas: [Magazine] = MagazineInfo.magazine
     
@@ -21,27 +21,41 @@ class TravelAppMainViewController: UIViewController, UITableViewDelegate, UITabl
         mainTableView.dataSource = self
         mainTableView.register(UINib(nibName: MagazineTableViewCell.cellIdentifier, bundle: nil), forCellReuseIdentifier: MagazineTableViewCell.cellIdentifier)
         
-        //        mainTableView.rowHeight = UITableView.automaticDimension
         mainTableView.rowHeight = 450
     }
     
+}
+
+extension TravelAppMainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return datas.count
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let url = URL(string: datas[indexPath.row].link) {
-            UIApplication.shared.open(url)
-        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.mainTableView.dequeueReusableCell(withIdentifier: MagazineTableViewCell.cellIdentifier, for: indexPath) as! MagazineTableViewCell
         
-        // logic here
         cell.configureCellWithData(datas[indexPath.row])
         
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let data = datas[indexPath.row]
+        
+        let detailVC = storyboard?.instantiateViewController(withIdentifier: MagazineDetailViewController.id) as! MagazineDetailViewController
+        
+        
+        // 멤버 프로퍼티 초기화
+        detailVC.imageURL = data.photo_image
+        detailVC.webURL = data.link
+        detailVC.detailTitle = data.title
+        detailVC.detailDate = data.formattedDate
+        
+        // present
+//        navigationController?.pushViewController(detailVC, animated: true)
+        present(detailVC, animated: true)
+        
+        tableView.reloadRows(at: [indexPath], with: .none)
+    }
 }

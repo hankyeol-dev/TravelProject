@@ -7,9 +7,9 @@
 
 import UIKit
 
-class PopularityCityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PopularityCityViewController: UIViewController {
     
-    var datas: [City] = CityInfo().cityList
+    var datas: [City] = CityInfo.cityList
     
     @IBOutlet var cityTableSection: UITableView!
     
@@ -25,8 +25,27 @@ class PopularityCityViewController: UIViewController, UITableViewDelegate, UITab
         cityTableSection.register(UINib(nibName: "PopularityCityViewCell", bundle: nil), forCellReuseIdentifier: "PopularityCityCell")
         cityTableSection.register(UINib(nibName: "AdvertisementViewCell", bundle: nil), forCellReuseIdentifier: "advertisementCell")
         
-        //        cityTableSection.rowHeight = 140
     }
+    
+    
+    @objc func onTouchLikeButton(_ sender: UIButton) {
+        if let isLiked = datas[sender.tag].like {
+            if isLiked {
+                datas[sender.tag].like = false
+                sender.buttonOnTouch(tintColor: .lightGray)
+            } else {
+                datas[sender.tag].like = true
+                sender.buttonOnTouch(tintColor: .systemPink)
+            }
+            
+            self.cityTableSection.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .none)
+        }
+        
+    }
+    
+}
+
+extension PopularityCityViewController: UITableViewDelegate, UITableViewDataSource {
     
     // configure table
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,19 +76,24 @@ class PopularityCityViewController: UIViewController, UITableViewDelegate, UITab
         
     }
     
-    @objc func onTouchLikeButton(_ sender: UIButton) {
-        if let isLiked = datas[sender.tag].like {
-            if isLiked {
-                datas[sender.tag].like = false
-                sender.buttonOnTouch(tintColor: .lightGray)
-            } else {
-                datas[sender.tag].like = true
-                sender.buttonOnTouch(tintColor: .systemPink)
-            }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let data = datas[indexPath.row]
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: PopularityCityDetailViewController.id) as! PopularityCityDetailViewController
+        
+        vc.labelText = data.title
+        
+        if data.ad {
+            vc.isAd = true
+            let navVC = UINavigationController(rootViewController: vc)
+            navVC.modalPresentationStyle = .fullScreen
             
-            self.cityTableSection.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .none)
+            present(navVC, animated: true)
+        } else {
+            vc.isAd = false
+            navigationController?.pushViewController(vc, animated: true)
         }
         
     }
-    
 }
