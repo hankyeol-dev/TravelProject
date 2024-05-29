@@ -18,6 +18,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="cD1-m4-w0j" kind="relationship" relationship="viewControllers" id="wUl-TK-CMP"/>
                         <segue destination="nsR-yE-fjp" kind="relationship" relationship="viewControllers" id="eIC-hZ-cGM"/>
                         <segue destination="yn0-QF-ilh" kind="relationship" relationship="viewControllers" id="ffr-4i-s3W"/>
                         <segue destination="jhg-Jb-njS" kind="relationship" relationship="viewControllers" id="k94-9c-TkY"/>
@@ -56,6 +57,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NZ1-Q7-brj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-606" y="892"/>
+        </scene>
+        <!--SearchTravelCity-->
+        <scene sceneID="Wyc-Ln-98Q">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SearchTravelCity" id="eot-hd-wVm" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="AHs-qf-vIi"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n4V-Kj-4g2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="303.19999999999999" y="1418.7192118226601"/>
         </scene>
         <!--인기 도시-->
         <scene sceneID="Z10-08-hVR">
@@ -114,10 +125,30 @@
             </objects>
             <point key="canvasLocation" x="-1396" y="153"/>
         </scene>
+        <!--여행 국가 탐색-->
+        <scene sceneID="5KW-2w-tmP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cD1-m4-w0j" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="여행 국가 탐색" image="shippingbox" catalog="system" id="ZjS-9v-yt0"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="thh-JC-PAQ">
+                        <rect key="frame" x="0.0" y="50" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eot-hd-wVm" kind="relationship" relationship="rootViewController" id="FqY-CH-4JC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zu3-G0-qrv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1396" y="1576"/>
+        </scene>
     </scenes>
     <resources>
         <image name="airplane" catalog="system" width="128" height="115"/>
         <image name="carrot.fill" catalog="system" width="128" height="122"/>
+        <image name="shippingbox" catalog="system" width="128" height="123"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
     </resources>
 </document>
