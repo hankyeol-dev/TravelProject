@@ -43,18 +43,13 @@ extension TravelAppMainViewController: UITableViewDelegate, UITableViewDataSourc
         
         let data = datas[indexPath.row]
         
-        let detailVC = storyboard?.instantiateViewController(withIdentifier: MagazineDetailViewController.id) as! MagazineDetailViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: TravelDetailViewController.id) as! TravelDetailViewController
         
-        
-        // 멤버 프로퍼티 초기화
-        detailVC.imageURL = data.photo_image
-        detailVC.webURL = data.link
-        detailVC.detailTitle = data.title
-        detailVC.detailDate = data.formattedDate
+        // 멤버 프로퍼티 값 할당
+        vc.configureViewWithData(data)
         
         // present
-//        navigationController?.pushViewController(detailVC, animated: true)
-        present(detailVC, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
         
         tableView.reloadRows(at: [indexPath], with: .none)
     }
