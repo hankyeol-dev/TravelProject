@@ -109,8 +109,10 @@ extension SearchTravelCityViewController: UISearchBarDelegate {
     }
     
     func mappingDataArray(_ dataArray: [CityModel], searchText: String) -> [CityModel] {
-        return dataArray.filter {
-            data in return data.city_name.contains(searchText) || data.city_explain.contains(searchText) || data.city_english_name.lowercased().contains(searchText)
-        }
+        return _filter(dataArray, cb: {
+            $0.city_name.contains(searchText) || $0.city_explain.contains(searchText) || $0.city_english_name.lowercased().contains(searchText)
+        })
+        
     }
+    
 }

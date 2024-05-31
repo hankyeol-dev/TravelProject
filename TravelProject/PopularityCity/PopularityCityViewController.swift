@@ -32,19 +32,18 @@ class PopularityCityViewController: UIViewController {
         if let isLiked = datas[sender.tag].like {
             if isLiked {
                 datas[sender.tag].like = false
-                sender.buttonOnTouch(tintColor: .lightGray)
+                sender.tintColor = .systemGray
             } else {
                 datas[sender.tag].like = true
-                sender.buttonOnTouch(tintColor: .systemPink)
+                sender.tintColor = .systemPink
+                
+                self.cityTableSection.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .none)
             }
             
-            self.cityTableSection.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .none)
         }
         
     }
-    
 }
-
 extension PopularityCityViewController: UITableViewDelegate, UITableViewDataSource {
     
     // configure table
